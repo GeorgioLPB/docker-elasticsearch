@@ -1,4 +1,4 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:6.1.4
+FROM docker.elastic.co/elasticsearch/elasticsearch:6.8.1
 #
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 #
