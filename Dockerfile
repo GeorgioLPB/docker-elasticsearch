@@ -2,12 +2,7 @@ FROM docker.elastic.co/elasticsearch/elasticsearch:6.8.3
 #
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 #
-LABEL \
-	Elasticsearch 6.8.3 \
-	maintainer georges.gregorio@gmail.com
-
-ENV \
-	Elasticsearch="6.8.3"
+LABEL maintainer georges.gregorio@gmail.com
 
 RUN set -eux;\
 	#
