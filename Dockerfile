@@ -3,13 +3,22 @@ FROM docker.elastic.co/elasticsearch/elasticsearch:7.10.0
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
 #
 LABEL maintainer georges.gregorio@gmail.com
+ENV EPEL_RELEASE="epel-release-8-9.el8.noarch.rpm"
 
 RUN set -eux;\
-	apt-get update && \
-	apt-get install -y tesseract-ocr tesseract-ocr-fra && \
-	rm -rf /var/lib/apt/lists/* && \
+	#
+	# leptonica
+	#
+	dnf --enablerepo=PowerTools install -y leptonica && \
+	#
+	# tesseract
+	#
+	curl --output "/tmp/${EPEL_RELEASE}" \
+		"https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/e/${EPEL_RELEASE}" && \
+	rpm -Uvh "/tmp/${EPEL_RELEASE}" && \
+	dnf install -y tesseract tesseract-langpack-fra && \
 	#
 	# Install Plugin
 	#
-	bin/elasticsearch-plugin install --batch ingest-attachment && \
-	
+	bin/elasticsearch-plugin install --batch ingest-attachment
+
