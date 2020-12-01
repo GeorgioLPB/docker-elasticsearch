@@ -16,7 +16,7 @@ RUN set -eux;\
 	curl --output "/tmp/${EPEL_RELEASE}" \
 		"https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/e/${EPEL_RELEASE}" && \
 	rpm -Uvh "/tmp/${EPEL_RELEASE}" && \
-	dnf install -y tesseract tesseract-langpack-fra && \
+	dnf install -y tesseract tesseract-langpack-fra liberation-fonts && \
 	#
 	# Install Plugin
 	#
