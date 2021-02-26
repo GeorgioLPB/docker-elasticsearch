@@ -4,7 +4,7 @@
 
 | Tags     | Elasticsearch |
 |:---------|:--------------|
-| `latest` | `7.10.2`      |
+| `latest` | `7.11.1`      |
 
 * [latest, (latest/Dockerfile)](https://github.com/GeorgioLPB/docker-elasticsearch/blob/master/Dockerfile)
 
